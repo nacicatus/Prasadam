@@ -23,7 +23,7 @@ class MasterViewController: UITableViewController {
         }
         
         let dbAccess = DBAccess()
-        products = dbAccess.getAllProducts()
+        self.products = dbAccess.getAllProducts()
         dbAccess.closeDatabase()
     }
 
@@ -63,6 +63,7 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
         let product = products[indexPath.row] as! Product

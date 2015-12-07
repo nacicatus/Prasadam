@@ -9,15 +9,18 @@
 import Foundation
 
 class DBAccess : NSObject {
+    
     var database: COpaquePointer = nil
     
-    override init(){
+    override init() {
         super.init()
         self.initializeDatabase()
     }
     
     func initializeDatabase() {
+        
         let path = NSBundle.mainBundle().pathForResource("catalog", ofType: "db")
+
         if (sqlite3_open(path!, &database) == SQLITE_OK){
             print("Opening Database")
         } else {
@@ -32,14 +35,14 @@ class DBAccess : NSObject {
         } else {
             print("Closing Database")
         }
-        database = nil
+       database = nil
     }
     
     
     func getAllProducts() -> NSMutableArray {
         let products = NSMutableArray()
         
-        let sql = "SELECT product.ID,product.Name,Manufacturer.name,product.details,product.price,product.quantityonhand,country.country, product.image FROM Product,Manufacturer, Country where manufacturer.manufacturerid=product.manufacturerid and product.countryoforiginid=country.countryid"
+        let sql = "SELECT product.ID,product.Name,Manufacturer.name,product.details,product.price,product.quantityonhand,country.country, product.image FROM Product,Manufacturer,Country where manufacturer.manufacturerid=product.manufacturerid and product.countryoforiginid=country.countryid"
         
         var statement: COpaquePointer = nil
         
@@ -86,6 +89,6 @@ class DBAccess : NSObject {
         
     }
     
-    
 }
+
 

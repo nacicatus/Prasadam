@@ -34,17 +34,18 @@ class DetailViewController: UIViewController {
             
             let theProduct: Product = self.detailItem
             
+                   
             if let _ = self.detailDescriptionLabel {
                 self.detailDescriptionLabel.text = "\(theProduct.ID)"
             }
             if let _ = self.nameLabel {
-                self.nameLabel.text = theProduct.name
+                nameLabel.text = "\(theProduct.name)"
             }
             if let _ = self.manufacturerLabel {
-                self.manufacturerLabel.text = theProduct.manufacturer
+                self.manufacturerLabel.text = "\(theProduct.manufacturer)"
             }
             if let _ = self.detailsLabel {
-                self.detailsLabel.text = theProduct.details
+                self.detailsLabel.text = "\(theProduct.details)"
             }
             if let _ = self.priceLabel {
                 self.priceLabel.text = "\(theProduct.price)"
@@ -53,7 +54,7 @@ class DetailViewController: UIViewController {
                 self.quantityLabel.text = "\(theProduct.quantity)"
             }
             if let _ = self.countryLabel {
-                self.countryLabel.text = theProduct.countryOfOrigin
+                self.countryLabel.text = "\(theProduct.countryOfOrigin)"
             }
             
                 

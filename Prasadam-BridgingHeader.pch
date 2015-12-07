@@ -1,0 +1,17 @@
+//
+//  Prasadam-BridgingHeader.pch
+//  Prasadam
+//
+//  Created by Saurabh Sikka on 06/12/15.
+//  Copyright © 2015 Saurabh Sikka. All rights reserved.
+//
+
+#ifndef Prasadam_BridgingHeader_pch
+#define Prasadam_BridgingHeader_pch
+
+#import <sqlite3.h>
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* Prasadam_BridgingHeader_pch */
